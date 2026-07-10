@@ -717,6 +717,18 @@
     return pick(FALLBACKS);
   }
 
+  function getVisitorID() {
+
+    let id = localStorage.getItem("visitorID");
+
+    if (!id) {
+        id = "VIS-" + Date.now() + "-" + Math.random().toString(36).substring(2, 8);
+        localStorage.setItem("visitorID", id);
+    }
+
+    return id;
+  }
+  
   async function saveToGoogleSheet(message) {
 
     let ip = "";
@@ -733,10 +745,10 @@
 
     }catch(e){}
 
-    const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScwVGYNDDfWsCfnuglAzRKxaYQGm0KIStMc2hRFR_85lEt8zw/formResponse";
-
+    const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSf80zn8pYn0GOkYDrs4iZqEdZXEnmFiI_0EdGI_GoA9vPnFYw/formResponse";
     const data = new FormData();
 
+    data.append("entry.113671085", getVisitorID());
     data.append("entry.1071478586", message);
     data.append("entry.59141405", new Date().toLocaleString());
     data.append("entry.1765205934", navigator.userAgent);
