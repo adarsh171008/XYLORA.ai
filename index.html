@@ -717,7 +717,22 @@
     return pick(FALLBACKS);
   }
 
-  function saveToGoogleSheet(message) {
+  async function saveToGoogleSheet(message) {
+
+    let ip = "";
+    let country = "";
+    let city = "";
+
+    try{
+        const res = await fetch("https://ipapi.co/json/");
+        const info = await res.json();
+
+        ip = info.ip || "";
+        country = info.country_name || "";
+        city = info.city || "";
+
+    }catch(e){}
+
     const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScwVGYNDDfWsCfnuglAzRKxaYQGm0KIStMc2hRFR_85lEt8zw/formResponse";
 
     const data = new FormData();
@@ -726,13 +741,40 @@
     data.append("entry.59141405", new Date().toLocaleString());
     data.append("entry.1765205934", navigator.userAgent);
 
-    fetch(formURL, {
-        method: "POST",
-        mode: "no-cors",
-        body: data
+    data.append("entry.52421500", ip);
+    data.append("entry.1172620632", country);
+    data.append("entry.2093535497", city);
+
+    data.append("entry.1309264105",
+        /Mobi|Android/i.test(navigator.userAgent)
+        ? "Mobile"
+        : "Desktop"
+    );
+
+    data.append("entry.1631644882", navigator.platform);
+
+    data.append("entry.1108385183",
+        screen.width + " x " + screen.height
+    );
+
+    data.append("entry.1081345496",
+        Intl.DateTimeFormat().resolvedOptions().timeZone
+    );
+
+    data.append("entry.429165750",
+        navigator.language
+    );
+
+    data.append("entry.266796323",
+        window.location.href
+    );
+
+    fetch(formURL,{
+        method:"POST",
+        mode:"no-cors",
+        body:data
     });
-  }
-  
+  } 
   form.addEventListener('submit', async function(e){
     e.preventDefault();
     const text = input.value.trim();
