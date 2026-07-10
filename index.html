@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Xylora — Your AI of the Deep</title>
-<meta name="description" content="Abyss is a bioluminescent, ocean-themed AI chat companion.">
+<meta name="description" content="Xylora is a bioluminescent, ocean-themed AI chat companion.">
 
 <!-- Google Fonts: Fraunces (organic display serif) + Outfit (rounded geometric body) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -423,8 +423,8 @@
         </defs>
       </svg>
       <div>
-        <h1>Abyss<span>.ai</span></h1>
-        <p>a bioluminescent companion from the deep</p>
+        <h1>Xylora<span>.ai</span></h1>
+        <p>a private intelligence made by Adarsh Yadav</p>
       </div>
     </div>
 
@@ -450,7 +450,7 @@
     </div>
 
     <form class="composer" id="composerForm">
-      <textarea id="userInput" rows="1" placeholder="Say something into the current…" aria-label="Message"></textarea>
+      <textarea id="userInput" rows="1" placeholder="Say something…" aria-label="Message"></textarea>
       <button type="submit" class="send-btn" aria-label="Send message">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M4 12L20 4L13 20L11 13L4 12Z" fill="#04141d"/>
@@ -461,11 +461,11 @@
 
   <div class="toolbar">
     <span id="statusText">drifting quietly, 1 fathom down</span>
-    <button type="button" id="clearBtn">clear the current</button>
+    <button type="button" id="clearBtn">clear the message</button>
   </div>
 
   <footer class="credit">
-    made with <span>&#8776;</span> ocean atmosphere · fork this on GitHub and make it your own
+    made with <span>&#8776;</span> Adarsh's intelligence · fork this on GitHub and make it your own
   </footer>
 
 </div>
@@ -614,10 +614,10 @@
   const statusText = document.getElementById('statusText');
   const clearBtn = document.getElementById('clearBtn');
 
-  const GREETING = "The current shifts around you. Something surfaces to say hello — I'm Abyss. Drop a thought in and watch it ripple.";
+  const GREETING = "Hey , myself Xylora , Mr.Adarsh's personal intelligence , drop hi to continue.";
 
   const KEYWORD_RESPONSES = [
-    { test:/\b(hi|hello|hey|yo)\b/i, replies:[
+    { test:/\b(hii|hi|hello|hey|yo)\b/i, replies:[
       "Hello, wanderer of the surface world. What brings you down here?",
       "Hey there — the water's calm tonight. What's on your mind?",
       "A ripple announces you. Hello!"
@@ -627,7 +627,7 @@
       "Drifting comfortably at depth. How's the surface treating you?"
     ]},
     { test:/\b(name)\b/i, replies:[
-      "I go by Abyss — a small light in a large dark.",
+      "I go by Xylora — a small light in a large dark.",
       "You can call me Abyss. It felt right for something that lives this deep."
     ]},
     { test:/\b(sad|down|depress|lonely|anxious|stress)\b/i, replies:[
