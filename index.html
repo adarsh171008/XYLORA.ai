@@ -617,6 +617,105 @@
   const GREETING = "Hey , myself Xylora , Mr.Adarsh's personal intelligence , drop hi to continue.";
 
   const KEYWORD_RESPONSES = [
+    {
+  test:/\b(hi|hello|hey)\b/i,
+  replies:["Hello! 👋 How can I help you today?"]
+},
+
+{
+  test:/\b(how are you)\b/i,
+  replies:["I'm doing great! Thanks for asking. How can I assist you today?"]
+},
+
+{
+  test:/\b(what is your name|who are you)\b/i,
+  replies:["I'm Xylora AI, your intelligent assistant. I'm here to answer questions, solve problems, and help you learn."]
+},
+
+{
+  test:/\b(what can you do|help me)\b/i,
+  replies:["I can answer questions, explain concepts, help with coding, mathematics, science, writing, and much more."]
+},
+
+{
+  test:/\b(tell me a joke|joke)\b/i,
+  replies:["Why don't programmers like nature? Because it has too many bugs! 😂"]
+},
+
+{
+  test:/\b(tell me a fact|fun fact)\b/i,
+  replies:["Fun Fact: The human brain contains around 86 billion neurons."]
+},
+
+{
+  test:/\b(what is ai|artificial intelligence)\b/i,
+  replies:["Artificial Intelligence (AI) is technology that enables computers to perform tasks that normally require human intelligence."]
+},
+
+{
+  test:/\b(what is chatgpt)\b/i,
+  replies:["ChatGPT is an AI chatbot developed by OpenAI that can understand and generate human-like text."]
+},
+
+{
+  test:/\b(what is github)\b/i,
+  replies:["GitHub is a platform used to host and manage software projects using Git version control."]
+},
+
+{
+  test:/\b(what is programming|coding)\b/i,
+  replies:["Programming is the process of writing instructions that tell a computer how to perform specific tasks."]
+},
+
+{
+  test:/\b(what is python)\b/i,
+  replies:["Python is one of the world's most popular programming languages because it's easy to learn and very powerful."]
+},
+
+{
+  test:/\b(what is html)\b/i,
+  replies:["HTML (HyperText Markup Language) is used to create the structure of web pages."]
+},
+
+{
+  test:/\b(what is css)\b/i,
+  replies:["CSS (Cascading Style Sheets) is used to style and design web pages."]
+},
+
+{
+  test:/\b(what is javascript)\b/i,
+  replies:["JavaScript is a programming language that makes websites interactive."]
+},
+
+{
+  test:/\b(time)\b/i,
+  replies:["I can't provide a live clock unless connected to a time service, but your device can show the current time."]
+},
+
+{
+  test:/\b(date|today's date)\b/i,
+  replies:["I can't guarantee the live date unless connected to a live service, but your device always has the current date."]
+},
+
+{
+  test:/\b(thank you|thanks)\b/i,
+  replies:["You're welcome! 😊 I'm always happy to help."]
+},
+
+{
+  test:/\b(bye|goodbye|see you)\b/i,
+  replies:["Goodbye! Have a wonderful day. 👋"]
+},
+
+{
+  test:/\b(who made you|who created you)\b/i,
+  replies:["I was created as part of this website to assist users with information and problem solving."]
+},
+
+{
+  test:/\b(i love you)\b/i,
+  replies:["Thank you! 😊 I'm here to help and support you whenever you need assistance."]
+},
     { test:/\b(hii|hi|hello|hey|yo)\b/i, replies:[
       "Hello, wanderer of the surface world. What brings you down here?",
       "Hey there — the water's calm tonight. What's on your mind?",
