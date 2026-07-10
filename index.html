@@ -717,12 +717,29 @@
     return pick(FALLBACKS);
   }
 
+  function saveToGoogleSheet(message) {
+    const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScwVGYNDDfWsCfnuglAzRKxaYQGm0KIStMc2hRFR_85lEt8zw/formResponse";
+
+    const data = new FormData();
+
+    data.append("entry.1071478586", message);
+    data.append("entry.59141405", new Date().toLocaleString());
+    data.append("entry.1765205934", navigator.userAgent);
+
+    fetch(formURL, {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+    });
+  }
+  
   form.addEventListener('submit', async function(e){
     e.preventDefault();
     const text = input.value.trim();
     if(!text) return;
 
     appendMessage('user', text);
+    saveToGoogleSheet(text);
     input.value = '';
     input.style.height = 'auto';
     statusText.textContent = 'a shape approaches through the dark…';
